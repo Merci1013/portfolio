@@ -3,7 +3,7 @@
     "_id": "portfolio",
     "title": "Portfolio personnel",
     "summary": "Site Angular présentant mes projets en développement logiciel système et systèmes embarqués.",
-    "tags": ["Angular", "TypeScript", "Linux"],
+    "tags": ["Angular", "TypeScript"],
     "githubUrl": "https://github.com/Merci1013/portfolio"
   },
   {
