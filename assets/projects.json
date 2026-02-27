@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "portfolio",
+    "title": "Portfolio personnel",
+    "summary": "Site Angular présentant mes projets en développement logiciel système et systèmes embarqués.",
+    "tags": ["Angular", "TypeScript", "Linux"],
+    "githubUrl": "https://github.com/Merci1013/portfolio"
+  },
+  {
+    "_id": "mini-shell",
+    "title": "Mini Shell Linux",
+    "summary": "Interpréteur de commandes implémenté en C supportant les processus et redirections.",
+    "tags": ["C", "fork", "exec", "Linux"],
+    "githubUrl": "https://github.com/Merci1013/mini-shell"
+  }
+]
