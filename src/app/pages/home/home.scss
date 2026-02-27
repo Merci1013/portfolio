@@ -1,0 +1,100 @@
+#accueil {
+  max-width: 1100px;
+  margin: 70px auto 90px;
+  padding: 0 18px;
+  text-align: center;
+}
+
+/* carte centrale */
+#accueil::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 26px;
+  opacity: .4;
+}
+
+.hero {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 26px;
+  padding: 42px 26px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+}
+
+/* titres */
+#accueil h1 {
+  margin: 0 0 10px;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#accueil p,
+#accueil span {
+  display: block;
+  max-width: 760px;
+  margin: 10px auto;
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+#accueil span {
+  font-weight: 800;
+  color: #e5e7eb;
+}
+
+/* CTA */
+.cta-list {
+  list-style: none;
+  padding: 0;
+  margin: 26px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  transition: .2s;
+}
+
+/* bouton principal */
+.cta-list li:first-child a.button {
+  background: linear-gradient(135deg, rgba(34,211,238,0.95), rgba(129,140,248,0.95));
+  color: white;
+  box-shadow: 0 14px 45px rgba(0,0,0,0.35);
+}
+.cta-list li:first-child a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 60px rgba(129,140,248,0.25);
+}
+
+/* bouton secondaire */
+.cta-list li:last-child a.button {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+.cta-list li:last-child a.button:hover {
+  background: rgba(56,189,248,0.12);
+  border-color: rgba(56,189,248,0.22);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  #accueil h1 { font-size: 38px; }
+  .hero { padding: 28px 16px; border-radius: 20px; }
+}

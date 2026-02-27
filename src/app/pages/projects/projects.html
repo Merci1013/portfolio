@@ -1,0 +1,24 @@
+<section>
+  <h1>Projets</h1>
+
+  <p *ngIf="loading">Chargement...</p>
+  <p *ngIf="error">{{ error }}</p>
+
+  <div *ngIf="!loading && !error">
+    <p *ngIf="projects.length === 0">Aucun projet pour l’instant.</p>
+
+    <article *ngFor="let p of projects" class="project-card">
+      <h2>{{ p.title }}</h2>
+      <p>{{ p.summary }}</p>
+
+      <div class="tags">
+        <span class="tag" *ngFor="let t of p.tags">{{ t }}</span>
+      </div>
+
+      <div class="links">
+        <a *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" rel="noopener">GitHub</a>
+        <a *ngIf="p.demoUrl" [href]="p.demoUrl" target="_blank" rel="noopener">Démo</a>
+      </div>
+    </article>
+  </div>
+</section>

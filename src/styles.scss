@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+/* ========= THEME ========= */
+:root {
+  --bg: #050816;
+  --bg2: #0b1226;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --accent: #22d3ee;
+  --accent2: #818cf8;
+
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+
+  --danger: #ef4444;
+}
+
+/* ========= BASE ========= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(900px 600px at 20% 10%, rgba(34,211,238,.18), transparent 60%),
+              radial-gradient(800px 500px at 80% 30%, rgba(129,140,248,.18), transparent 55%),
+              linear-gradient(135deg, var(--bg), var(--bg2));
+  min-height: 100%;
+}
+
+/* fond subtil animé */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(600px 380px at 15% 20%, rgba(34,211,238,.10), transparent 55%),
+    radial-gradient(700px 420px at 85% 40%, rgba(129,140,248,.10), transparent 60%);
+  filter: blur(18px);
+  animation: floatGlow 10s ease-in-out infinite alternate;
+  opacity: .9;
+}
+
+@keyframes floatGlow {
+  from { transform: translate3d(-10px, -8px, 0) scale(1); }
+  to   { transform: translate3d(10px, 8px, 0) scale(1.03); }
+}
+
+/* ========= TYPO ========= */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ========= FORM ========= */
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  outline: none;
+  transition: .2s;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  border-color: rgba(34,211,238,.65);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.18);
+}
+
+/* ========= BUTTON ========= */
+button {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, opacity .2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(129,140,248,.25);
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+/* ========= CARD UTILITY ========= */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 50px rgba(0,0,0,.35);
+}
+
+/* ========= APPEAR ANIMATION (pour tes .appear) ========= */
+.appear {
+  animation: appear .7s ease both;
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========= SCROLLBAR (Chrome/Edge) ========= */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+::-webkit-scrollbar-thumb {
+  background: rgba(129,140,248,0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(129,140,248,0.55); }
+
+/* sélection texte */
+::selection {
+  background: rgba(34,211,238,0.25);
+}

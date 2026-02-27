@@ -1,0 +1,96 @@
+section {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* titre */
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  padding: 22px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 22px;
+  color: #93c5fd;
+}
+
+/* labels */
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* message */
+p {
+  text-align: center;
+  color: #4ade80;
+  font-weight: 500;
+}
+
+/* ===== PROJECT LIST ===== */
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  margin-top: 14px;
+  transition: .25s;
+}
+
+.project-item:hover {
+  background: rgba(56,189,248,0.08);
+}
+
+.project-item strong {
+  font-size: 18px;
+}
+
+.project-item p {
+  margin: 5px 0;
+  color: #cbd5e1;
+  text-align: left;
+}
+
+.project-item small {
+  color: #94a3b8;
+}
+
+/* bouton supprimer */
+.project-item button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.project-item button:hover {
+  box-shadow: 0 6px 18px rgba(239,68,68,0.5);
+}

@@ -1,0 +1,52 @@
+<section>
+  <h1>Admin</h1>
+
+  <div class="card">
+    <h2>Token</h2>
+    <input [(ngModel)]="token" placeholder="ADMIN_TOKEN" />
+    <button (click)="saveToken()">Enregistrer</button>
+  </div>
+
+  <p *ngIf="message">{{ message }}</p>
+
+  <div class="card">
+    <h2>Ajouter un projet</h2>
+
+    <label>Titre</label>
+    <input [(ngModel)]="title" />
+
+    <label>Résumé</label>
+    <textarea [(ngModel)]="summary"></textarea>
+
+    <label>Tags (séparés par virgules)</label>
+    <input [(ngModel)]="tagsText" placeholder="C, Linux, TCP" />
+
+    <label>GitHub URL</label>
+    <input [(ngModel)]="githubUrl" />
+
+    <label>Demo URL</label>
+    <input [(ngModel)]="demoUrl" />
+
+    <label>Image URL</label>
+    <input [(ngModel)]="imageUrl" />
+
+    <button (click)="addProject()" [disabled]="loading">Ajouter</button>
+  </div>
+
+  <div class="card">
+    <h2>Projets en base</h2>
+    <button (click)="refresh()" [disabled]="loading">Rafraîchir</button>
+
+    <p *ngIf="loading">Chargement...</p>
+
+    <article *ngFor="let p of projects" class="project-item">
+      <div>
+        <strong>{{ p.title }}</strong>
+        <p>{{ p.summary }}</p>
+        <small *ngIf="p.tags?.length">Tags: {{ p.tags.join(', ') }}</small>
+      </div>
+
+      <button (click)="deleteProject(p._id)" [disabled]="loading">Supprimer</button>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<header class="topbar">
+  <div class="topbar__inner">
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+      <a routerLink="/cv" routerLinkActive="active">Curriculum Vitae</a>
+      <a routerLink="/projects" routerLinkActive="active">Projets</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a routerLink="/interets" routerLinkActive="active">Intérêts</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <p>© 2025 Merci Dikeko Nsingi — Tous droits réservés</p>
+</footer>
