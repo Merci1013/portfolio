@@ -14,25 +14,10 @@ export interface Project {
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {
-  private readonly baseUrl = 'http://localhost:3000/api/projects';
-
+  private readonly staticUrl = 'assets/projects.json';
   constructor(private http: HttpClient) {}
 
-  // PUBLIC
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.baseUrl);
-  }
-
-  // ADMIN
-  createProject(payload: Partial<Project>, token: string) {
-    return this.http.post<Project>(this.baseUrl, payload, {
-      headers: { 'x-admin-token': token },
-    });
-  }
-
-  deleteProject(id: string, token: string) {
-    return this.http.delete(`${this.baseUrl}/${id}`, {
-      headers: { 'x-admin-token': token },
-    });
+    return this.http.get<Project[]>(this.staticUrl);
   }
 }
